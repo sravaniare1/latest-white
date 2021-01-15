@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>User Sketching Interface</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <center><h1 style="color:black;" style="font-size:50px;" style="text-align:center;"> Collaborative WHITEBOARD</h1></center>
+    <center><p><b>Have a happy DRAWING and TEXTING</b></p></center>
+    <!-- Modal is the plugin in which the activity will pop up in the same page -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content is the class that stores many tags inside it -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center><h4 class="modal-title"> Please Enter your User Name</h4></center>
+                </div>
+                <center>
+                    <div class="modal-body">
+                        <input type="text" id="name" value=""> &nbsp &nbsp
+                        <input type="button" id="getName" value="Submit" data-dismiss="modal" class="btn btn-default">
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div id="board">
+        <center>
+            <canvas id="myCanvas" width="700px" height="500px"> 
+                Sorry, your browser doesn't support canvas technology.
+            </canvas>
+        </center>
+        <p>
+            <center>
+                Please select the Color: <select id="selectColor">
+                    <option id="colBlack" value="black" selected="selected">Black</option>
+                    <option id="colRed" value="red">Red</option>
+                    <option id="colBlue" value="blue">Blue</option>
+                    <option id="colGreen" value="green">Green</option>
+                    <option id="colOrange" value="orange">Orange</option>
+                    <option id="colYellow" value="yellow">Yellow</option>
+                    <option id="colPink" value="pink">Pink</option>
+                </select>
+            </center>
+        </p>
+    </div>
+    <div id="fixed">
+        <div id="chatendUser" class="fixedHeader"></div>
+        <div class="fixedContent"></div>
+        <div class="textbox">
+            <textarea class="endUserinput">Type here...</textarea>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
